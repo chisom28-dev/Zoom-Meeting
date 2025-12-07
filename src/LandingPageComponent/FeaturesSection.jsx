@@ -1,4 +1,5 @@
 import React from "react";
+import Header from "../LandingPageComponent/Header";
 
 const features = [
   { title: "Screen Sharing", description: "Share your screen with anyone in real-time." },
