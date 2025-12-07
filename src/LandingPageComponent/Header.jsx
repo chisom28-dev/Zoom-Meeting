@@ -21,7 +21,7 @@ const Header = () => {
         </button>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex space-x-6">
+        <nav className="hidden md:flex space-x-6 items-center justify-center">
           <Link to="/features" className="hover:text-blue-600">Features</Link>
           <Link to="/testimonials" className="hover:text-blue-600">Testimonials</Link>
           <Link to="/pricing" className="hover:text-blue-600">Pricing</Link>
