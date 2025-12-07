@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { Eye, EyeClosed } from "lucide-react";
 import { Link } from "react-router-dom";
+import Header from "../LandingPageComponent/Header";
 const SignUp = () => {
   const [isLogin, setIsLogin] = useState(false); // false = Sign Up, true = Login
   const [name, setName] = useState("");
@@ -44,6 +45,8 @@ const SignUp = () => {
   };
 
   return (
+    <>
+    <Header />
     <div className="flex flex-col items-center justify-center w-full h-screen gap-4">
       <Toaster position="top-right" />
 
@@ -90,7 +93,8 @@ const SignUp = () => {
           type="submit"
           className="outline bg-blue-600 text-white py-2"
         >
-          Sign Up
+          
+          <Link to="/login">Sign Up</Link>
         </button>
 
         <div className="flex items-center justify-center gap-2 mt-2">
@@ -104,6 +108,7 @@ const SignUp = () => {
         </div>
       </form>
     </div>
+    </>
   );
 }
 export default SignUp

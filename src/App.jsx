@@ -6,17 +6,26 @@ import Header from "./LandingPageComponent/Header";
 import FeaturesSection from "./LandingPageComponent/FeaturesSection";
 import TestimonialsSection from "./LandingPageComponent/TestimonialsSection";
 import PricingSection from "./LandingPageComponent/PricingSection";
+import NavBar from "./Pages/NavBar"
+import HomePage from "./Pages/homePage"
+import ContactPage from "./Pages/Contact";
+import Reminder from "./Pages/Reminder";
 function App() {
   return (
     <BrowserRouter>
-      <Header />
+      {/* <Header /> */}
       <Routes>
+        <Route path ="/HomePage" element ={<HomePage />} />
+        <Route path ="/NavBar" element ={<NavBar />} />
         <Route path="/" element={<LandingPage />} />
         <Route path="/features" element={<FeaturesSection />} />
         <Route path="/testimonials" element={<TestimonialsSection />} />
         <Route path="/pricing" element={<PricingSection />} />
         <Route path="/login" element={<LoginIn />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/ContactPage" element={<ContactPage />} />
+        <Route path="/Reminder" element={<Reminder />} />
+
       </Routes>
     </BrowserRouter>
   );

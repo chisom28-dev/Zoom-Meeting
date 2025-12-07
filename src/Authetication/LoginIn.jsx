@@ -5,7 +5,7 @@ import { Toaster } from "react-hot-toast";
 import { Eye } from "lucide-react";
 import { EyeClosed } from "lucide-react";
 import { Link } from "react-router-dom";
-
+import Header from "../LandingPageComponent/Header";
 const LoginIn = () => {
   const [value, setValue] = useState(true);
   const [email, setEmail] = useState("");
@@ -34,9 +34,11 @@ const LoginIn = () => {
     setShowPasssword(!showPassword);
   };
   return (
+    <>
+    <Header />  
     <div className="flex flex-col items-center justify-center w-full h-screen gap-4">
       <Toaster position="top-right"></Toaster>
-
+      
       <h1 className="text-2xl text-blue-600 font-bold">Login In</h1>
       <form action="" className="flex flex-col gap-3 ">
         <input
@@ -62,11 +64,13 @@ const LoginIn = () => {
           type="submit"
           className="outline bg-blue-600 text-white py-2   "
         >
-          Submit Here
+          <Link to="/homePage" className="text-white cursor-point font-semibold" > Submit Here </Link>
+          
         </button>
         <h1 className='flex items-center justify-center gap-3' >You Dont Have an Account? <Link to="/signup" className="text-blue-500 cursor-point font-semibold" >Sign Up</Link></h1>
       </form>
     </div>
+    </>
   );
 };
 
