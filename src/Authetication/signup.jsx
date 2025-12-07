@@ -3,17 +3,18 @@ import toast, { Toaster } from "react-hot-toast";
 import { Eye, EyeClosed } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "../LandingPageComponent/Header";
+import signUpImage from "../assets/signup.png";
+
 const SignUp = () => {
-  const [isLogin, setIsLogin] = useState(false); // false = Sign Up, true = Login
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [showPassword, setShowPassword] = useState(false);
+  const [showPassword, setShowPassword] = useState(true);
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
 
-    if (!isLogin && name.trim().length < 8) {
+    if (name.trim().length < 8) {
       toast.error("Name must be at least 8 characters");
       return;
     }
@@ -29,86 +30,81 @@ const SignUp = () => {
       return;
     }
 
-    toast.success(isLogin ? "Successfully Logged In" : "Successfully Signed Up");
+    toast.success("Successfully Signed Up");
   };
 
-  const togglePasswordVisibility = (e) => {
-    e.preventDefault();
+  const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
-  };
-
-  const toggleLoginSignUp = () => {
-    setIsLogin(!isLogin);
-    setName("");
-    setEmail("");
-    setPassword("");
   };
 
   return (
     <>
-    <Header />
-    <div className="flex flex-col items-center justify-center w-full h-screen gap-4">
-      <Toaster position="top-right" />
+      <Header />
 
-      <h1 className="text-2xl text-blue-600 font-bold">
-       SIGN UP
-      </h1>
+      <div className="flex flex-col items-center justify-center w-full h-screen p-4">
+        <Toaster position="top-right" />
 
-      <form onSubmit={handleFormSubmit} className="flex flex-col gap-3 w-80">
-          <input
-            className="outline px-4 py-2.5"
-            value={name}
-            type="text"
-            placeholder="Enter Name"
-            onChange={(e) => setName(e.target.value)}
-          />
-        
+        <div className="w-full max-w-5xl flex flex-col md:flex-row rounded-2xl overflow-hidden shadow-2xl bg-white">
 
-        <input
-          className="outline px-4 py-2.5"
-          value={email}
-          type="email"
-          placeholder="Enter Email"
-          onChange={(e) => setEmail(e.target.value)}
-        />
+          {/* LEFT SIDE (Form) */}
+          <div className="flex flex-col w-full md:w-1/2 p-6 items-center justify-evenly gap-6">
+            <h1 className="text-3xl text-blue-600 font-bold">Sign Up</h1>
 
-        <div className="border flex items-center justify-between px-2">
-          <input
-            className="outline-none py-2.5 w-full"
-            value={password}
-            type={showPassword ? "text" : "password"}
-            placeholder="Enter Password"
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <button
-            onClick={togglePasswordVisibility}
-            type="button"
-            className="pl-2"
-          >
-            {showPassword ? <Eye /> : <EyeClosed />}
-          </button>
+            <form className="flex flex-col gap-6 w-full px-4" onSubmit={handleFormSubmit}>
+              <input
+                className="border px-4 py-2.5 rounded"
+                type="text"
+                placeholder="Full Name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+
+              <input
+                className="border px-4 py-2.5 rounded"
+                type="email"
+                placeholder="Enter Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+
+              <div className="border rounded w-full flex items-center">
+                <input
+                  className="px-4 py-2.5 outline-none w-full rounded-l"
+                  type={showPassword ? "password" : "text"}
+                  placeholder="Enter Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                <button type="button" onClick={togglePasswordVisibility} className="pr-3">
+                  {showPassword ? <EyeClosed /> : <Eye />}
+                </button>
+              </div>
+
+              <button
+                type="submit"
+                className="bg-blue-600 text-white py-2 rounded font-semibold"
+              >
+                Sign Up
+              </button>
+
+              <h1 className="flex items-center justify-center gap-3 text-sm">
+                Already have an account?
+                <Link to="/login" className="text-blue-500 font-semibold">
+                  Login
+                </Link>
+              </h1>
+            </form>
+          </div>
+
+          {/* RIGHT SIDE (Image) */}
+          <div className="hidden md:block md:w-1/2">
+            <img src={signUpImage} alt="Sign Up" className="w-full h-full object-cover" />
+          </div>
+
         </div>
-
-        <button
-          type="submit"
-          className="outline bg-blue-600 text-white py-2"
-        >
-          
-          <Link to="/login">Sign Up</Link>
-        </button>
-
-        <div className="flex items-center justify-center gap-2 mt-2">
-          <span>{isLogin ? "Don't have an account?" : "Already have an account?"}</span>
-          <span
-            onClick={toggleLoginSignUp}
-            className="cursor-pointer text-blue-500 font-semibold"
-          >
-            <Link to="/login">Login</Link>
-          </span>
-        </div>
-      </form>
-    </div>
+      </div>
     </>
   );
-}
-export default SignUp
+};
+
+export default SignUp;
