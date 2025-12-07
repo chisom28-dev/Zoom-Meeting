@@ -61,9 +61,9 @@ export default function NavBar() {
       {/* Mobile Dropdown Menu */}
       {menuOpen && (
         <div className="absolute top-16 left-0 w-full bg-white dark:bg-gray-900 shadow-md md:hidden px-6 py-4 space-y-4">
-          <a href="#" className="block text-gray-700 dark:text-gray-200 hover:text-blue-600">Contacts</a>
+          < Link to="/ContactPage" className="block text-gray-700 dark:text-gray-200 hover:text-blue-600">Contacts</Link>
           <a href="#" className="block text-gray-700 dark:text-gray-200 hover:text-blue-600">Meetings</a>
-          <a href="#" className="block text-gray-700 dark:text-gray-200 hover:text-blue-600">Reminders</a>
+          <Link to="/Reminder" className="block text-gray-700 dark:text-gray-200 hover:text-blue-600">Reminders</Link>
 
           <div className="flex justify-between items-center pt-4">
             <button

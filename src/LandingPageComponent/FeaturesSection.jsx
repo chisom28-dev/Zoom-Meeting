@@ -10,7 +10,9 @@ const features = [
 
 const FeaturesSection = () => {
   return (
-    <section id="features" className="py-20 bg-gray-50 text-center">
+    <>
+    <Header />
+    <section id="features" className="py-20 bg-gray-50 text-center flex flex-col items-center justify-center h-screen">
       <h2 className="text-4xl font-bold mb-12">Features</h2>
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
         {features.map((feature, index) => (
@@ -21,6 +23,7 @@ const FeaturesSection = () => {
         ))}
       </div>
     </section>
+    </>
   );
 };
 

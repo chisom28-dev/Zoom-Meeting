@@ -1,5 +1,5 @@
 import React from "react";
-
+import Header from "./Header";
 const plans = [
   { name: "Free", price: "$0", features: ["Unlimited meetings", "Up to 50 participants", "Basic support"] },
   { name: "Pro", price: "$15/mo", features: ["Up to 200 participants", "Cloud recording", "Priority support"] },
@@ -7,7 +7,9 @@ const plans = [
 
 const PricingSection = () => {
   return (
-    <section id="pricing" className="py-20 text-center bg-gray-100">
+    <>
+    <Header />
+    <section id="pricing" className="py-20 text-center bg-gray-100 h-screen flex flex-col items-center justify-center">
       <h2 className="text-4xl font-bold mb-12">Pricing</h2>
       <div className="flex flex-col md:flex-row justify-center gap-8 max-w-6xl mx-auto">
         {plans.map((plan, index) => (
@@ -22,6 +24,7 @@ const PricingSection = () => {
         ))}
       </div>
     </section>
+    </>
   );
 };
 

@@ -1,5 +1,5 @@
 import React from "react";
-
+import Header from "./Header";
 const testimonials = [
   { name: "Alice Johnson", feedback: "This platform changed how our team collaborates remotely!" },
   { name: "Mark Stevens", feedback: "Seamless meetings with zero lag. Highly recommended." },
@@ -7,7 +7,9 @@ const testimonials = [
 
 const TestimonialsSection = () => {
   return (
-    <section id="testimonials" className="py-20 bg-blue-50 text-center">
+    <>
+    <Header />
+    <section id="testimonials" className="py-20 bg-blue-50 text-center h-screen flex flex-col items-center justify-center">
       <h2 className="text-4xl font-bold mb-12">What Our Users Say</h2>
       <div className="max-w-4xl mx-auto space-y-8">
         {testimonials.map((t, i) => (
@@ -18,6 +20,7 @@ const TestimonialsSection = () => {
         ))}
       </div>
     </section>
+    </>
   );
 };
 
