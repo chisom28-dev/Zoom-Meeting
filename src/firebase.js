@@ -4,13 +4,13 @@ import { getAuth } from "firebase/auth";
 import { getAnalytics } from "firebase/analytics";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDJjo9jYmQjgs5BJJ0s4qAeGikx5DMAOYY",
-  authDomain: "video-connect-1021e.firebaseapp.com",
-  projectId: "video-connect-1021e",
-  storageBucket: "video-connect-1021e.appspot.com",
-  messagingSenderId: "770205969010",
-  appId: "1:770205969010:web:c01af6436c39f57c94f0eb",
-  measurementId: "G-8MWFJ9S8GB"
+ apikey: import.meta.env.VITE_apiKey,
+ authDomain: import.meta.env.VITE_authDomain,
+ projectId: import.meta.env.VITE_projectId,
+ storageBucket: import.meta.env.VITE_storageBucket,
+ messagingSenderId: import.meta.env.VITE_messagingSenderId,
+ appId: import.meta.env.VITE_appId,
+ VITE_measurementId: import.meta.env.VITE_measurementId
 };
 
 // Initialize Firebase
