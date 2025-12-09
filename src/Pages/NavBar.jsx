@@ -46,7 +46,9 @@ export default function NavBar() {
         </button>
 
         <button className="text-white bg-blue-600 px-4 py-2 rounded-md hover:bg-blue-700 transition">
-          Start Meeting
+          <Link to="/Meeting">
+          Start Meeting 
+          </Link>
         </button>
       </div>
 

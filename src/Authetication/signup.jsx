@@ -81,10 +81,13 @@ const SignUp = () => {
               </div>
 
               <button
+                to="/login"
                 type="submit"
                 className="bg-blue-600 text-white py-2 rounded font-semibold"
               >
+                <Link to="/login">
                 Sign Up
+                </Link>
               </button>
 
               <h1 className="flex items-center justify-center gap-3 text-sm">
@@ -98,7 +101,7 @@ const SignUp = () => {
 
           {/* RIGHT SIDE (Image) */}
           <div className="hidden md:block md:w-1/2">
-            <img src={signUpImage} alt="Sign Up" className="w-full h-full object-cover" />
+            <img src={signUpImage} alt="Sign Up" loading="lazy"  className="w-full h-full object-cover" />
           </div>
 
         </div>

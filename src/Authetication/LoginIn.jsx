@@ -74,7 +74,7 @@ const LoginIn = () => {
           type="submit"
           className="bg-blue-600 text-white py-2 rounded font-semibold"
         >
-          <Link to="/homePage" className="text-white">
+          <Link to="/HomePage" className="text-white">
             Submit Here
           </Link>
         </button>

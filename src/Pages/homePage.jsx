@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "./NavBar.jsx";
+import { Link } from "react-router-dom";
 import {
   Video,
   Calendar,
@@ -32,9 +33,9 @@ const HomePage = () => {
             Start Meeting
           </button>
 
-          <button className="bg-white flex gap-2 text-blue-900 px-6 py-3 rounded-md font-semibold hover:text-white hover:bg-blue-700 transition">
+          <Link to="/ContactPage" className="bg-white flex gap-2 text-blue-900 px-6 py-3 rounded-md font-semibold hover:text-white hover:bg-blue-700 transition">
             View Contact
-          </button>
+          </Link>
         </div>
       </div>
 
