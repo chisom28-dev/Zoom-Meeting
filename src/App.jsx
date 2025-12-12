@@ -10,7 +10,8 @@ import NavBar from "./Pages/NavBar"
 import HomePage from "./Pages/homePage"
 import ContactPage from "./Pages/Contact";
 import Reminder from "./Pages/Reminder";
-// import MeetingPage from './Pages/Meeting'
+// import CreateMeeting from "./Pages/CreateMeeting";
+import MeetingPage from './Pages/Meeting'
 function App() {
   return (
     <BrowserRouter>
@@ -26,7 +27,8 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/ContactPage" element={<ContactPage />} />
         <Route path="/Reminder" element={<Reminder />} />
-        {/* <Route path="/Meeting" element={<MeetingPage />} /> */}
+        {/* <Route path="/CreatMeeting" element={<CreateMeeting />} /> */}
+        <Route path="/Meeting" element={<MeetingPage />} />
       </Routes>
     </BrowserRouter>
   );

@@ -28,7 +28,7 @@ export default function NavBar() {
       {/* Desktop Navigation */}
       <nav className="hidden md:flex space-x-6 text-gray-700 dark:text-gray-200 font-medium">
         <Link to="/ContactPage" className="hover:text-blue-600">Contacts</Link>
-        <a href="#" className="hover:text-blue-600">Meetings</a>
+        <Link to="/Meeting" className="hover:text-blue-600">Meetings</Link>
         <Link to="/Reminder" className="hover:text-blue-600">Reminders</Link>
       </nav>
 
@@ -64,7 +64,7 @@ export default function NavBar() {
       {menuOpen && (
         <div className="absolute top-16 left-0 w-full bg-white dark:bg-gray-900 shadow-md md:hidden px-6 py-4 space-y-4">
           < Link to="/ContactPage" className="block text-gray-700 dark:text-gray-200 hover:text-blue-600">Contacts</Link>
-          <a href="#" className="block text-gray-700 dark:text-gray-200 hover:text-blue-600">Meetings</a>
+                  <Link to="/Meeting" className="block text-gray-700 dark:text-gray-200 hover:text-blue-600">Meetings</Link>
           <Link to="/Reminder" className="block text-gray-700 dark:text-gray-200 hover:text-blue-600">Reminders</Link>
 
           <div className="flex justify-between items-center pt-4">
