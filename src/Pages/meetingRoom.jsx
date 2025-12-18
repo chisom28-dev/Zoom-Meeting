@@ -143,7 +143,7 @@ export default function MeetingRoom() {
         {/* Participants Panel - Mobile Drawer */}
         {participantsPanelVisible && (
           <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex justify-end lg:relative lg:flex lg:w-80">
-            <aside className="w-full sm:w-80 h-full bg-gradient-to-b from-[#12141a] to-[#0a0c12] flex flex-col">
+            <aside className="w-full sm:w-80 h-full bg-linear-to-b from-[#12141a] to-[#0a0c12] flex flex-col">
               <div className="p-4 flex items-center justify-between border-b border-white/10">
                 <h3 className="font-bold text-lg">Participants</h3>
                 <button onClick={toggleParticipantsPanel} className="text-white text-xl">✕</button>
